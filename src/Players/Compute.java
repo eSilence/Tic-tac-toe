@@ -12,18 +12,6 @@ import Game.Game;
 public class Compute {
     private char znak;
 
-    public void SetZnak(char znak)
-    {
-        this.znak = znak;
-    }
-    public char GetZnak()
-    {
-        return znak;
-    }
-    public void Act(Game game)
-    {
-        int line= 0, column = 0;
-        boolean result;
-    }
+    // to do
 
 }
