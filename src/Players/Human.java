@@ -1,8 +1,12 @@
 package Players;
+// INFO: this is ONLY fast comments
+// don't use uppercase in package name! (players, not Players)
+// many things is in C# style;)
 import java.io.IOException;
+// after rrefactoring packages import must be game.Game 
 import Game.Game;
 
-
+// try don't use default comments. It's hard, i know=)
 /**
  * Created with IntelliJ IDEA.
  * User: elena
@@ -11,18 +15,18 @@ import Game.Game;
  * To change this template use File | Settings | File Templates.
  */
 public class Human {
+    // new line here
     private char znak;
 
-    public void SetZnak(char znak)
-    {
+    public void SetZnak(char znak) { // symbol '{' must be on the same line with method name (don't use C# or C++ style in Java)
         this.znak = znak;
     }
-    public char GetZnak()
-    {
+    // new line after methods
+    public char GetZnak() { // methods name must start wit lower case char: getZnak (NOT: GetZnak)
         return znak;
     }
-    public void Act(Game game)
-    {
+    // too many lines in method, need to be refactored
+    public void Act(Game game) {
         int line= 0, column = 0;
         boolean result;
 
@@ -45,11 +49,11 @@ public class Human {
             System.out.println(line + ", "+ column);
 
             result = (line >= 0 && line < Game.SIZE && column >= 0 && column < Game.SIZE);
-            if(result)
+            if(result) {
                 result = result && (game.CheckAct(line, column)) ;
+            }
 
-            if (!result)
-            {
+            if (!result) {
                 System.out.println("Ошибка ввода! Повторите еще раз.");
             }
             else
