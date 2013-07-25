@@ -67,8 +67,6 @@ public class Game {
             result = (result && fields[i][size - i - 1] == ch);
         }
         return result;
-
-
     }
 
     public boolean checkNone()  {
@@ -78,15 +76,33 @@ public class Game {
         return false;
     }
 
+    public boolean isClear(){
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++)
+                if (!checkAct(i, j)) return false;
+        return true;
+    }
+
+
+
     public void setPos(int line, int column, char ch) {
         fields[line][column] = ch;
+    }
+
+    public char getPos(int line, int column){
+        return fields[line][column];
     }
 
     public boolean checkAct(int line, int column) {
         return fields[line][column]== DEFAULT_CHAR;
     }
 
+    public static char getDefaultChar() {
+        return DEFAULT_CHAR;
+    }
+
     public void showFields() {
+        System.out.println("~");
         for (int i = 0; i < size; i++)  {
             showLineFields(i);
             System.out.println();
@@ -101,7 +117,7 @@ public class Game {
     private void showCell(int line, int column) {
         System.out.print("["+fields[line][column]+"]");
 
-    }
+     }
 
 }
 

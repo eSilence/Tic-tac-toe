@@ -59,9 +59,8 @@ public class Human {
         if(result) {
             result = result && (game.checkAct(line, column)) ;
         }
-
         return result;
 
-    }
+     }
 
 }
